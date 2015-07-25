@@ -23,8 +23,8 @@ describe("Main", function() {
     sandbox = sinon.sandbox.create();
 
     // stub some console methods
-    sandbox.stub(console, "log");
-    sandbox.stub(console, "error");
+    // sandbox.stub(console, "log");
+    // sandbox.stub(console, "error");
   });
 
   afterEach(function() {

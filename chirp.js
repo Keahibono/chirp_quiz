@@ -1,17 +1,21 @@
-function numberOfChirps (num, str) {
-  var x = 0;
-  var chirpArray = [];
-
-  if (str == null){
-    str = "chirp"
+function numberOfChirps(num, str, chirpArray) {
+  if (str === void(0)){
+    str = "chirp";
   }
 
-  if (num%1 === 0 && num > 0){
-    while(chirpArray.length < num){
-        chirpArray.push(str);
-    }
-    return chirpArray.join(' ');
+  if (chirpArray === void(0)){
+    chirpArray = [];
+  }
 
+  if (num%1 === 0 && num >= 0){
+
+    if (num <= 0){
+      return chirpArray.join(" ");
+
+    } else {
+      chirpArray.push(str);
+      return numberOfChirps(num-1, str, chirpArray);
+    }
   } else {
     return "Please enter positive whole numbers and/or integers ONLY";
   }
